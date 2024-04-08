@@ -2,7 +2,6 @@ import { Avatar, Box, Stack, Toolbar, Typography } from '@mui/material';
 import { SignIn } from '@clerk/nextjs';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import GppGoodIcon from '@mui/icons-material/GppGood';
-import Photo from "../../../public/5.jpg";
 import Image from 'next/image';
 
 
@@ -23,7 +22,7 @@ export default function Page() {
                         </Box>
                         <Box display={"flex"} justifyContent={"center"} alignItems={"center"} height={"90%"}>
                             <Box>
-                                <SignIn afterSignInUrl={"/about"} />
+                                <SignIn afterSignInUrl={"/"} />
                                 {/* <p>hi</p> */}
                             </Box>
                         </Box>

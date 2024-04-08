@@ -7,7 +7,7 @@ const App = () => {
     return (
         <div>
             home page
-            <UserButton />
+            <UserButton afterSignOutUrl="/sign-in"/>
         </div>
     );
 }
