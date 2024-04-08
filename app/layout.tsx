@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ReduxRegistry from "@/components/Redux/ReduxRegistry";
-
+import { ClerkProvider } from "@clerk/nextjs";
 
 
 export const metadata: Metadata = {
@@ -15,12 +15,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <ReduxRegistry>
-        <body>
-          {children}
-        </body>
-      </ReduxRegistry>
-    </html>
+    <ReduxRegistry>
+      <ClerkProvider>
+        <html lang="en">
+          <body>
+            {children}
+          </body>
+        </html>
+      </ClerkProvider>
+    </ReduxRegistry>
   );
 }
