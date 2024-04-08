@@ -1,16 +1,10 @@
-import MyApp from "@/components/MyApp";
-import { UserButton, auth } from "@clerk/nextjs";
+import { redirect } from "next/navigation";
 
 
 
 
-const page = async () => {
-  
-  return (
-    <>
-      <MyApp />
-    </>
-  );
+const page = () => {
+  redirect("/dashboard");
 }
 
 export default page;

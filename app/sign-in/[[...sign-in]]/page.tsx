@@ -22,8 +22,7 @@ export default function Page() {
                         </Box>
                         <Box display={"flex"} justifyContent={"center"} alignItems={"center"} height={"90%"}>
                             <Box>
-                                <SignIn afterSignInUrl={"/"} />
-                                {/* <p>hi</p> */}
+                                <SignIn afterSignInUrl={"/dashboard"} />
                             </Box>
                         </Box>
                     </Box>
