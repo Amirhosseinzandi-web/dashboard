@@ -1,12 +1,13 @@
+import MyApp from "@/components/MyApp";
 
 
 
 
 const page = () => {
   return (
-    <div>
-      Enter
-    </div>
+    <>
+      <MyApp />
+    </>
   );
 }
 

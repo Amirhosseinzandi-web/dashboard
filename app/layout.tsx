@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
+import ReduxRegistry from "@/components/Redux/ReduxRegistry";
 
 
 
@@ -16,9 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        {children}
-      </body>
+      <ReduxRegistry>
+        <body>
+          {children}
+        </body>
+      </ReduxRegistry>
     </html>
   );
 }
