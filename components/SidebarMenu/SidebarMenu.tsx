@@ -1,3 +1,4 @@
+"use client";
 import { Box, Checkbox, Divider, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Typography } from "@mui/material";
 import GppGoodIcon from '@mui/icons-material/GppGood';
 import UnfoldMoreIcon from '@mui/icons-material/UnfoldMore';
@@ -7,9 +8,22 @@ import TrafficIcon from '@mui/icons-material/Traffic';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ErrorIcon from '@mui/icons-material/Error';
+import { useState } from "react";
 
 
 const SidebarMenu: React.FC = () => {
+
+    const [activeItem, setActiveItem] = useState("overview");
+
+    const menuItems = [
+        { text: 'overview', icon: <LeaderboardIcon /> },
+        { text: 'Customers', icon: <GroupIcon /> },
+        { text: 'Integrations', icon: <TrafficIcon /> },
+        { text: 'Settings', icon: <SettingsIcon /> },
+        { text: 'Account', icon: <AccountCircleIcon /> },
+        { text: 'Errors', icon: <ErrorIcon /> }
+    ];
+
     return (
         <Box bgcolor={"#0B1229"} width={"100%"} height={"100%"} >
             <Box position={"sticky"} top={0}>
@@ -41,59 +55,19 @@ const SidebarMenu: React.FC = () => {
                 <Box p={2}>
 
                     <List sx={{ width: '100%' }}>
-
-                        <ListItem disablePadding >
-                            <ListItemButton sx={{ color: "#b3b9c6" }}>
-                                <ListItemIcon sx={{ color: "#b3b9c6", minWidth: 38 }}>
-                                    <LeaderboardIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="overview" />
-                            </ListItemButton>
-                        </ListItem>
-
-                        <ListItem disablePadding >
-                            <ListItemButton sx={{ color: "#b3b9c6" }}>
-                                <ListItemIcon sx={{ color: "#b3b9c6", minWidth: 38 }} >
-                                    <GroupIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Customers" />
-                            </ListItemButton>
-                        </ListItem>
-
-                        <ListItem disablePadding >
-                            <ListItemButton sx={{ color: "#b3b9c6" }}>
-                                <ListItemIcon sx={{ color: "#b3b9c6", minWidth: 38 }} >
-                                    <TrafficIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Integrations" />
-                            </ListItemButton>
-                        </ListItem>
-
-                        <ListItem disablePadding >
-                            <ListItemButton sx={{ color: "#b3b9c6" }}>
-                                <ListItemIcon sx={{ color: "#b3b9c6", minWidth: 38 }} > <SettingsIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Settings" />
-                            </ListItemButton>
-                        </ListItem>
-
-                        <ListItem disablePadding >
-                            <ListItemButton sx={{ color: "#b3b9c6" }}>
-                                <ListItemIcon sx={{ color: "#b3b9c6", minWidth: 38 }} > <AccountCircleIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Account" />
-                            </ListItemButton>
-                        </ListItem>
-
-                        <ListItem disablePadding >
-                            <ListItemButton sx={{ color: "#b3b9c6" }}>
-                                <ListItemIcon sx={{ color: "#b3b9c6", minWidth: 38 }} >
-                                    <ErrorIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="overview" />
-                            </ListItemButton>
-                        </ListItem>
-
+                        {menuItems.map((item, index) => (
+                            <ListItem disablePadding key={index} sx={{ bgcolor: activeItem === item.text ? "#635BFF" : "transparent", borderRadius: 3 }}>
+                                <ListItemButton
+                                    sx={{ color: activeItem === item.text ? "white" : "#b3b9c6" }}
+                                    onClick={() => setActiveItem(item.text)}
+                                >
+                                    <ListItemIcon sx={{ color: activeItem === item.text ? "#fff" : "#b3b9c6", minWidth: 38 }}>
+                                        {item.icon}
+                                    </ListItemIcon>
+                                    <ListItemText primary={item.text} />
+                                </ListItemButton>
+                            </ListItem>
+                        ))}
                     </List>
 
                 </Box>
