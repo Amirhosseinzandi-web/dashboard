@@ -1,5 +1,5 @@
 "use client";
-import { Box, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Typography } from "@mui/material";
+import { Box, Button, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Typography } from "@mui/material";
 import GppGoodIcon from '@mui/icons-material/GppGood';
 import UnfoldMoreIcon from '@mui/icons-material/UnfoldMore';
 import LeaderboardIcon from '@mui/icons-material/Leaderboard';
@@ -9,6 +9,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ErrorIcon from '@mui/icons-material/Error';
 import { useState } from "react";
+import Image from "next/image";
 
 
 const DesktopMenu: React.FC = () => {
@@ -25,7 +26,7 @@ const DesktopMenu: React.FC = () => {
     ];
 
     return (
-        <Box bgcolor={"#0B1229"} width={"100%"} height={"100%"} >
+        <Box bgcolor={"#0B1229"} height={"100%"} >
             <Box position={"sticky"} top={0}>
 
                 <Box p={3}>
@@ -52,9 +53,9 @@ const DesktopMenu: React.FC = () => {
 
                 <Divider sx={{ bgcolor: "#434a60" }} />
 
-                <Box p={2}>
+                <Box p={2} pb={16}>
 
-                    <List sx={{ width: '100%' }}>
+                    <List component="nav" sx={{ width: '100%' }}>
                         {menuItems.map((item, index) => (
                             <ListItem disablePadding key={index} sx={{ bgcolor: activeItem === item.text ? "#635BFF" : "transparent", borderRadius: 3 }}>
                                 <ListItemButton
@@ -71,6 +72,16 @@ const DesktopMenu: React.FC = () => {
                     </List>
 
                 </Box>
+                <Divider sx={{ bgcolor: "#434a60" }} />
+                <Stack p={2} direction={"column"}>
+
+                    <Typography component={"p"} color={"white"} fontWeight={"bold"} fontSize={14}>Need more features?</Typography>
+                    <Typography component={"p"} color={"#8a94a6"} fontSize={14}>Check out our Pro solution template.</Typography>
+                    <Box component={"figure"} display={"flex"} justifyContent={"center"} mt={2}>
+                        <Image src="/devias-kit-pro.png" alt="pro" width={175} height={175} />
+                    </Box>
+                    <Button variant="contained" sx={{ bgcolor: "#635BFF", borderRadius: 2, p: 1, mt: 2 }}>Pro Version</Button>
+                </Stack>
 
             </Box>
         </Box >

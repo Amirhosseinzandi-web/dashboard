@@ -18,7 +18,7 @@ const Header = () => {
 
     return (
         <>
-            <AppBar position="sticky" sx={{ bgcolor: "white", borderBottom: "1px solid #E0E0E0" }}>
+            <AppBar position="sticky" sx={{ bgcolor: "white", borderBottom: "1px solid #E0E0E0"}}>
                 <Toolbar>
                     <Stack direction={"row"} justifyContent={"space-between"} width={"100%"}>
                         <Box display={"flex"} gap={2} alignItems={"center"}>
