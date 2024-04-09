@@ -1,5 +1,5 @@
 import Header from "@/components/Header/Header";
-import SidebarMenu from "@/components/SidebarMenu/SidebarMenu";
+import DesktopMenu from "@/components/DesktopMenu/DesktopMenu";
 import { Box } from "@mui/material";
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 
@@ -9,7 +9,7 @@ const DashboardPage = async () => {
         <>
             <Grid container>
                 <Grid xs={12} lg={3} xl={2} sx={{ display: { xs: "none", lg: "block" } }} >
-                    <SidebarMenu />
+                    <DesktopMenu />
                 </Grid>
 
                 <Grid xs={12} lg={9} xl={10}>

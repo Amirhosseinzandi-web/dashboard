@@ -1,5 +1,5 @@
 "use client";
-import { Box, Checkbox, Divider, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Typography } from "@mui/material";
+import { Box, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Typography } from "@mui/material";
 import GppGoodIcon from '@mui/icons-material/GppGood';
 import UnfoldMoreIcon from '@mui/icons-material/UnfoldMore';
 import LeaderboardIcon from '@mui/icons-material/Leaderboard';
@@ -11,7 +11,7 @@ import ErrorIcon from '@mui/icons-material/Error';
 import { useState } from "react";
 
 
-const SidebarMenu: React.FC = () => {
+const DesktopMenu: React.FC = () => {
 
     const [activeItem, setActiveItem] = useState("overview");
 
@@ -77,4 +77,4 @@ const SidebarMenu: React.FC = () => {
     );
 }
 
-export default SidebarMenu;
+export default DesktopMenu;

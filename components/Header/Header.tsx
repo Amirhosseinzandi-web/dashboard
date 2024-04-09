@@ -1,15 +1,21 @@
-import { AppBar, Box, Button, IconButton, Stack, Toolbar, Tooltip, styled } from "@mui/material";
+"use client";
+import { AppBar, Box, IconButton, Stack, Toolbar, Tooltip } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import PeopleIcon from '@mui/icons-material/People';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { UserButton } from "@clerk/nextjs";
+import MobileMenu from "../MobileMenu/MobileMenu";
+import { useState } from "react";
 
 
 
 
 
 const Header = () => {
+
+    const [open, setOpen] = useState(false);
+
     return (
         <>
             <AppBar position="sticky" sx={{ bgcolor: "white", borderBottom: "1px solid #E0E0E0" }}>
@@ -17,7 +23,7 @@ const Header = () => {
                     <Stack direction={"row"} justifyContent={"space-between"} width={"100%"}>
                         <Box display={"flex"} gap={2} alignItems={"center"}>
                             <Tooltip title="Menu" sx={{ display: { xs: "block", lg: "none" } }}>
-                                <IconButton>
+                                <IconButton onClick={() => setOpen(true)}>
                                     <MenuIcon sx={{ color: "rgba(0, 0, 0, 0.54)" }} />
                                 </IconButton>
                             </Tooltip>
@@ -46,7 +52,11 @@ const Header = () => {
                     </Stack>
                 </Toolbar>
             </AppBar>
+            {/* *************************************************** */}
 
+            <MobileMenu open={open} setOpen={setOpen} />
+
+            {/*  *************************************************/}
         </>
     );
 }
