@@ -27,7 +27,7 @@ const DesktopMenu: React.FC = () => {
 
     return (
         <Box bgcolor={"#0B1229"} height={"100%"} >
-            <Box position={"sticky"} top={0}>
+            <Box position={"sticky"} top={0} height={"100vh"}>
 
                 <Box p={3}>
                     <Box color={"white"}>
@@ -53,7 +53,7 @@ const DesktopMenu: React.FC = () => {
 
                 <Divider sx={{ bgcolor: "#434a60" }} />
 
-                <Box p={2} pb={16}>
+                <Box p={2} pb={16} sx={{height:"calc(100vh - 461px)"}}>
 
                     <List component="nav" sx={{ width: '100%' }}>
                         {menuItems.map((item, index) => (

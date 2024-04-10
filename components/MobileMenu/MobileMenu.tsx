@@ -83,7 +83,7 @@ const MobileMenu: React.FC<PropsType> = ({ open, setOpen }) => {
 
                         <Divider sx={{ bgcolor: "#434a60" }} />
 
-                        <Box p={2} pb={16}>
+                        <Box p={2} pb={16} sx={{height:"calc(100vh - 461px)"}}>
 
                             <List component="nav" sx={{ width: '100%' }}>
                                 {menuItems.map((item, index) => (
