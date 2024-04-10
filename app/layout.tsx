@@ -18,7 +18,7 @@ export default function RootLayout({
     <ReduxRegistry>
       <ClerkProvider>
         <html lang="en">
-          <body>
+          <body style={{ minHeight: "100vh", display: "flex" }}>
             {children}
           </body>
         </html>

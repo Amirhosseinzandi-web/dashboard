@@ -26,8 +26,8 @@ const DesktopMenu: React.FC = () => {
     ];
 
     return (
-        <Box bgcolor={"#0B1229"} height={"100%"} >
-            <Box position={"sticky"} top={0} height={"100vh"}>
+        <Box height={"100%"} >
+            <Box position={"sticky"} top={0} minHeight={"100vh"} bgcolor={"#0B1229"} display={"flex"} flexDirection={"column"}>
 
                 <Box p={3}>
                     <Box color={"white"}>
@@ -53,7 +53,7 @@ const DesktopMenu: React.FC = () => {
 
                 <Divider sx={{ bgcolor: "#434a60" }} />
 
-                <Box p={2} pb={16} sx={{height:"calc(100vh - 461px)"}}>
+                <Box p={2} flexGrow={1}>
 
                     <List component="nav" sx={{ width: '100%' }}>
                         {menuItems.map((item, index) => (
@@ -72,16 +72,18 @@ const DesktopMenu: React.FC = () => {
                     </List>
 
                 </Box>
-                <Divider sx={{ bgcolor: "#434a60" }} />
-                <Stack p={2} direction={"column"}>
 
-                    <Typography component={"p"} color={"white"} fontWeight={"bold"} fontSize={14}>Need more features?</Typography>
-                    <Typography component={"p"} color={"#8a94a6"} fontSize={14}>Check out our Pro solution template.</Typography>
-                    <Box component={"figure"} display={"flex"} justifyContent={"center"} mt={2}>
-                        <Image src="/devias-kit-pro.png" alt="pro" width={175} height={175} />
-                    </Box>
-                    <Button variant="contained" sx={{ bgcolor: "#635BFF", borderRadius: 2, p: 1, mt: 2 }}>Pro Version</Button>
-                </Stack>
+                <Box>
+                    <Stack p={2} direction={"column"} flexGrow={1} justifyContent={"end"} borderTop={"1px solid #434a60"}>
+
+                        <Typography component={"p"} color={"white"} fontWeight={"bold"} fontSize={14}>Need more features?</Typography>
+                        <Typography component={"p"} color={"#8a94a6"} fontSize={14}>Check out our Pro solution template.</Typography>
+                        <Box component={"figure"} display={"flex"} justifyContent={"center"} mt={2}>
+                            <Image src="/devias-kit-pro.png" alt="pro" width={175} height={175} />
+                        </Box>
+                        <Button variant="contained" sx={{ bgcolor: "#635BFF", borderRadius: 2, p: 1, mt: 2 }}>Pro Version</Button>
+                    </Stack>
+                </Box>
 
             </Box>
         </Box >
