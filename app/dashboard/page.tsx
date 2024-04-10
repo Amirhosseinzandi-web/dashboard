@@ -1,10 +1,27 @@
+"use client"
 import Header from "@/components/Header/Header";
 import DesktopMenu from "@/components/DesktopMenu/DesktopMenu";
-import { Box, Container, Fab, Stack, Typography } from "@mui/material";
+import { Box, Container, Fab, LinearProgress, Stack, Typography, linearProgressClasses, styled } from "@mui/material";
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import StickyNote2Icon from '@mui/icons-material/StickyNote2';
+
+
+const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+    height: 5,
+    borderRadius: 5,
+    [`&.${linearProgressClasses.colorPrimary}`]: {
+        backgroundColor: "#C3C0FF",
+    },
+    [`& .${linearProgressClasses.bar}`]: {
+        borderRadius: 5,
+        backgroundColor: theme.palette.mode === 'light' ? '#635BFF' : '',
+    },
+}));
+
 
 
 const DashboardPage = () => {
@@ -21,9 +38,9 @@ const DashboardPage = () => {
 
                         <Container maxWidth={"xl"}>
 
-                            <Box display={"flex"} justifyContent={"space-between"} gap={2} sx={{ flexDirection: { xs: "column", sm: "row" } , flexWrap: "wrap" }}>
+                            <Box display={"flex"} justifyContent={"space-between"} gap={2} sx={{ flexDirection: { xs: "column", sm: "row" }, flexWrap: "wrap" }}>
 
-                                <Box sx={{ padding: "25px 15px", width: { xs: "100%", sm: "48%" , lg:"23%" } }} border={"1px solid #EDEDED"} borderRadius={4} >
+                                <Box sx={{ padding: "25px 15px", width: { xs: "100%", sm: "48%", lg: "23%" } }} border={"1px solid #EDEDED"} borderRadius={4} >
                                     <Box display={"flex"} justifyContent={"space-between"} gap={1}>
                                         <Box>
 
@@ -46,7 +63,7 @@ const DashboardPage = () => {
                                     </Box>
                                 </Box>
 
-                                <Box sx={{ padding: "25px 15px", width: { xs: "100%", sm: "48%" , lg:"23%" } }} border={"1px solid #EDEDED"} borderRadius={4} >
+                                <Box sx={{ padding: "25px 15px", width: { xs: "100%", sm: "48%", lg: "23%" } }} border={"1px solid #EDEDED"} borderRadius={4} >
                                     <Box display={"flex"} justifyContent={"space-between"} gap={1}>
                                         <Box>
 
@@ -69,50 +86,40 @@ const DashboardPage = () => {
                                     </Box>
                                 </Box>
 
-                                <Box sx={{ padding: "25px 15px", width: { xs: "100%", sm: "48%" , lg:"23%" } }} border={"1px solid #EDEDED"} borderRadius={4} >
+                                <Box sx={{ padding: "25px 15px", width: { xs: "100%", sm: "48%", lg: "23%" } }} border={"1px solid #EDEDED"} borderRadius={4} >
                                     <Box display={"flex"} justifyContent={"space-between"} gap={1}>
                                         <Box>
 
-                                            <Typography component={"p"} color={"#667085"} fontSize={12}>Budget</Typography>
-                                            <Typography variant="h4" mt={1}>$24k</Typography>
+                                            <Typography component={"p"} color={"#667085"} fontSize={12}>TASK PROGRESS</Typography>
+                                            <Typography variant="h4" mt={1}>75.5%</Typography>
                                         </Box>
 
                                         <Box>
-                                            <Box width={"56px"} height={"56px"} borderRadius={"50%"} bgcolor={"#635BFF"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
-                                                <AttachMoneyIcon sx={{ color: "white", fontSize: "25px" }} />
+                                            <Box width={"56px"} height={"56px"} borderRadius={"50%"} bgcolor={"#FB9C0C"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
+                                                <FormatListBulletedIcon sx={{ color: "white", fontSize: "25px" }} />
                                             </Box>
                                         </Box>
                                     </Box>
-                                    <Box mt={2} display={"flex"} alignItems={"center"} gap={2}>
-                                        <Box display={"flex"} alignItems={"center"} color={"#15b79f"} gap={1}>
-                                            <ArrowUpwardIcon sx={{ fontSize: "17px" }} />
-                                            <Typography>12%</Typography>
-                                        </Box>
-                                        <Typography component={"p"} fontSize={12} color={"#667085"}>Since last month</Typography>
+                                    <Box mt={2}>
+                                        <BorderLinearProgress variant="determinate" value={75.5} />
                                     </Box>
                                 </Box>
 
-                                <Box sx={{ padding: "25px 15px", width: { xs: "100%", sm: "48%" , lg:"23%" } }} border={"1px solid #EDEDED"} borderRadius={4} >
+                                <Box sx={{ padding: "25px 15px", width: { xs: "100%", sm: "48%", lg: "23%" } }} border={"1px solid #EDEDED"} borderRadius={4} >
                                     <Box display={"flex"} justifyContent={"space-between"} gap={1}>
                                         <Box>
 
-                                            <Typography component={"p"} color={"#667085"} fontSize={12}>Budget</Typography>
-                                            <Typography variant="h4" mt={1}>$24k</Typography>
+                                            <Typography component={"p"} color={"#667085"} fontSize={12}>TOTAL PROFIT</Typography>
+                                            <Typography variant="h4" mt={1}>$15k</Typography>
                                         </Box>
 
                                         <Box>
                                             <Box width={"56px"} height={"56px"} borderRadius={"50%"} bgcolor={"#635BFF"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
-                                                <AttachMoneyIcon sx={{ color: "white", fontSize: "25px" }} />
+                                                <StickyNote2Icon sx={{ color: "white", fontSize: "25px" }} />
                                             </Box>
                                         </Box>
                                     </Box>
-                                    <Box mt={2} display={"flex"} alignItems={"center"} gap={2}>
-                                        <Box display={"flex"} alignItems={"center"} color={"#15b79f"} gap={1}>
-                                            <ArrowUpwardIcon sx={{ fontSize: "17px" }} />
-                                            <Typography>12%</Typography>
-                                        </Box>
-                                        <Typography component={"p"} fontSize={12} color={"#667085"}>Since last month</Typography>
-                                    </Box>
+                                    
                                 </Box>
 
                             </Box>
