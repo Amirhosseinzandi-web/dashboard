@@ -1,5 +1,6 @@
 "use client";
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -8,7 +9,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { Stack, Typography } from '@mui/material';
+import { Button, Stack, Typography } from '@mui/material';
 import GppGoodIcon from '@mui/icons-material/GppGood';
 import UnfoldMoreIcon from '@mui/icons-material/UnfoldMore';
 import LeaderboardIcon from '@mui/icons-material/Leaderboard';
@@ -17,6 +18,7 @@ import TrafficIcon from '@mui/icons-material/Traffic';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ErrorIcon from '@mui/icons-material/Error';
+import Image from 'next/image';
 
 
 type PropsType = {
@@ -27,7 +29,7 @@ type PropsType = {
 
 const MobileMenu: React.FC<PropsType> = ({ open, setOpen }) => {
 
-    const [activeItem, setActiveItem] = React.useState("overview");
+    const [activeItem, setActiveItem] = useState("overview");
 
     const menuItems = [
         { text: 'overview', icon: <LeaderboardIcon /> },
@@ -38,11 +40,24 @@ const MobileMenu: React.FC<PropsType> = ({ open, setOpen }) => {
         { text: 'Errors', icon: <ErrorIcon /> }
     ];
 
+    useEffect(() => {
+
+        const ResizeHandler = () => {
+            setOpen(false)
+        }
+
+        window.addEventListener("resize", ResizeHandler)
+
+        return () => {
+            window.removeEventListener("resize", ResizeHandler)
+        }
+    })
+
     return (
         <div>
             <Drawer open={open} onClose={() => setOpen(false)} >
-                <Box sx={{ width: 300 }} role="presentation" p={3} bgcolor={"#0B1229"} width={"100%"} height={"100%"}>
-                    <Box>
+                <Box role="presentation" bgcolor={"#0B1229"} width={"100%"} height={"100%"}>
+                    <Box width={"330px"}>
 
                         <Box p={3}>
                             <Box color={"white"}>
@@ -68,9 +83,9 @@ const MobileMenu: React.FC<PropsType> = ({ open, setOpen }) => {
 
                         <Divider sx={{ bgcolor: "#434a60" }} />
 
-                        <Box p={2}>
+                        <Box p={2} pb={16}>
 
-                            <List sx={{ width: '100%' }}>
+                            <List component="nav" sx={{ width: '100%' }}>
                                 {menuItems.map((item, index) => (
                                     <ListItem disablePadding key={index} sx={{ bgcolor: activeItem === item.text ? "#635BFF" : "transparent", borderRadius: 3 }}>
                                         <ListItemButton
@@ -87,6 +102,16 @@ const MobileMenu: React.FC<PropsType> = ({ open, setOpen }) => {
                             </List>
 
                         </Box>
+                        <Divider sx={{ bgcolor: "#434a60" }} />
+                        <Stack p={2} direction={"column"}>
+
+                            <Typography component={"p"} color={"white"} fontWeight={"bold"} fontSize={14}>Need more features?</Typography>
+                            <Typography component={"p"} color={"#8a94a6"} fontSize={14}>Check out our Pro solution template.</Typography>
+                            <Box component={"figure"} display={"flex"} justifyContent={"center"} mt={2}>
+                                <Image src="/devias-kit-pro.png" alt="pro" width={175} height={175} />
+                            </Box>
+                            <Button variant="contained" sx={{ bgcolor: "#635BFF", borderRadius: 2, p: 1, mt: 2 }}>Pro Version</Button>
+                        </Stack>
 
                     </Box>
                 </Box>
