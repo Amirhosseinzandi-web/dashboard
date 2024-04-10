@@ -24,10 +24,10 @@ const DashboardPage = () => {
                             <Box display={"flex"} justifyContent={"space-between"} gap={2} sx={{ flexDirection: { xs: "column", sm: "row" } , flexWrap: "wrap" }}>
 
                                 <Box sx={{ padding: "25px 15px", width: { xs: "100%", sm: "48%" , lg:"23%" } }} border={"1px solid #EDEDED"} borderRadius={4} >
-                                    <Box display={"flex"} justifyContent={"space-between"}>
+                                    <Box display={"flex"} justifyContent={"space-between"} gap={1}>
                                         <Box>
 
-                                            <Typography component={"p"} color={"#667085"}>Budget</Typography>
+                                            <Typography component={"p"} color={"#667085"} fontSize={12}>Budget</Typography>
                                             <Typography variant="h4" mt={1}>$24k</Typography>
                                         </Box>
 
@@ -47,10 +47,10 @@ const DashboardPage = () => {
                                 </Box>
 
                                 <Box sx={{ padding: "25px 15px", width: { xs: "100%", sm: "48%" , lg:"23%" } }} border={"1px solid #EDEDED"} borderRadius={4} >
-                                    <Box display={"flex"} justifyContent={"space-between"}>
+                                    <Box display={"flex"} justifyContent={"space-between"} gap={1}>
                                         <Box>
 
-                                            <Typography component={"p"} color={"#667085"}>TOTAL CUSTOMERS</Typography>
+                                            <Typography component={"p"} color={"#667085"} fontSize={12}>TOTAL CUSTOMERS</Typography>
                                             <Typography variant="h4" mt={1}>$1.6k</Typography>
                                         </Box>
 
@@ -70,10 +70,10 @@ const DashboardPage = () => {
                                 </Box>
 
                                 <Box sx={{ padding: "25px 15px", width: { xs: "100%", sm: "48%" , lg:"23%" } }} border={"1px solid #EDEDED"} borderRadius={4} >
-                                    <Box display={"flex"} justifyContent={"space-between"}>
+                                    <Box display={"flex"} justifyContent={"space-between"} gap={1}>
                                         <Box>
 
-                                            <Typography component={"p"} color={"#667085"}>Budget</Typography>
+                                            <Typography component={"p"} color={"#667085"} fontSize={12}>Budget</Typography>
                                             <Typography variant="h4" mt={1}>$24k</Typography>
                                         </Box>
 
@@ -93,10 +93,10 @@ const DashboardPage = () => {
                                 </Box>
 
                                 <Box sx={{ padding: "25px 15px", width: { xs: "100%", sm: "48%" , lg:"23%" } }} border={"1px solid #EDEDED"} borderRadius={4} >
-                                    <Box display={"flex"} justifyContent={"space-between"}>
+                                    <Box display={"flex"} justifyContent={"space-between"} gap={1}>
                                         <Box>
 
-                                            <Typography component={"p"} color={"#667085"}>Budget</Typography>
+                                            <Typography component={"p"} color={"#667085"} fontSize={12}>Budget</Typography>
                                             <Typography variant="h4" mt={1}>$24k</Typography>
                                         </Box>
 
