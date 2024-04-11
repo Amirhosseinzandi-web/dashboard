@@ -55,8 +55,8 @@ const MobileMenu: React.FC<PropsType> = ({ open, setOpen }) => {
 
     return (
         <div>
-            <Drawer open={open} onClose={() => setOpen(false)} >
-                <Box role="presentation" width={"100%"} height={"100%"}>
+            <Drawer open={open} onClose={() => setOpen(false)}>
+                <Box role="presentation" width={"100%"} height={"100%"} sx={{backgroundColor:"red"}}>
                     <Box width={"330px"} bgcolor={"#0B1229"} minHeight={"100vh"} display={"flex"} flexDirection={"column"}>
 
                         <Box p={3}>
