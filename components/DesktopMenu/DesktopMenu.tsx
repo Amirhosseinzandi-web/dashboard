@@ -8,22 +8,28 @@ import TrafficIcon from '@mui/icons-material/Traffic';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ErrorIcon from '@mui/icons-material/Error';
-import { useState } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 
 const DesktopMenu: React.FC = () => {
 
-    const [activeItem, setActiveItem] = useState("overview");
+    const pathName = usePathname()
+
+
 
     const menuItems = [
-        { text: 'overview', icon: <LeaderboardIcon /> },
-        { text: 'Customers', icon: <GroupIcon /> },
-        { text: 'Integrations', icon: <TrafficIcon /> },
-        { text: 'Settings', icon: <SettingsIcon /> },
-        { text: 'Account', icon: <AccountCircleIcon /> },
-        { text: 'Errors', icon: <ErrorIcon /> }
+        { text: 'dashboard', icon: <LeaderboardIcon /> },
+        { text: 'customers', icon: <GroupIcon /> },
+        { text: 'integrations', icon: <TrafficIcon /> },
+        { text: 'settings', icon: <SettingsIcon /> },
+        { text: 'account', icon: <AccountCircleIcon /> },
+        { text: 'errors', icon: <ErrorIcon /> }
     ];
+
+
+
 
     return (
         <Box height={"100%"} >
@@ -33,7 +39,9 @@ const DesktopMenu: React.FC = () => {
                     <Box color={"white"}>
                         <Stack direction={"row"} alignItems={"center"} gap={1}>
                             <GppGoodIcon />
-                            <Typography component={"p"} fontWeight={"bold"} fontSize={18}>Auth Demo</Typography>
+                            <Typography component={"p"} fontWeight={"bold"} fontSize={18}>
+                                <Link href={"/dashboard"}>Auth Demo</Link>
+                            </Typography>
                         </Stack>
                     </Box>
 
@@ -57,15 +65,16 @@ const DesktopMenu: React.FC = () => {
 
                     <List component="nav" sx={{ width: '100%' }}>
                         {menuItems.map((item, index) => (
-                            <ListItem disablePadding key={index} sx={{ bgcolor: activeItem === item.text ? "#635BFF" : "transparent", borderRadius: 3 }}>
+                            <ListItem disablePadding key={index} sx={{ bgcolor: item.text === pathName.slice(1) ? "#635BFF" : "transparent", borderRadius: 3, overflow: "hidden" }}>
                                 <ListItemButton
-                                    sx={{ color: activeItem === item.text ? "white" : "#b3b9c6" }}
-                                    onClick={() => setActiveItem(item.text)}
+                                    sx={{ color: item.text === pathName.slice(1) ? "white" : "#b3b9c6" }}
                                 >
-                                    <ListItemIcon sx={{ color: activeItem === item.text ? "#fff" : "#b3b9c6", minWidth: 38 }}>
-                                        {item.icon}
-                                    </ListItemIcon>
-                                    <ListItemText primary={item.text} />
+                                    <Link href={`/${item.text.toLowerCase()}`} className="flex items-center">
+                                        <ListItemIcon sx={{ color: item.text === pathName.slice(1) ? "#fff" : "#b3b9c6", minWidth: 38 }}>
+                                            {item.icon}
+                                        </ListItemIcon>
+                                        <ListItemText primary={item.text.charAt(0).toUpperCase() + item.text.slice(1).toLowerCase()} />
+                                    </Link>
                                 </ListItemButton>
                             </ListItem>
                         ))}
