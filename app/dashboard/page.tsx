@@ -1,7 +1,7 @@
 import Header from "@/components/Header/Header";
 import DesktopMenu from "@/components/DesktopMenu/DesktopMenu";
 import { Box, Container, Stack } from "@mui/material";
-import ChartsHandler from "./ChartsHandler";
+import ChartsAndProducts from "./ChartsAndProducts";
 import CardData from "./CardData/CardData";
 
 
@@ -23,7 +23,7 @@ const DashboardPage = () => {
 
                         <Container maxWidth={"xl"}>
                             <CardData />
-                            <ChartsHandler />
+                            <ChartsAndProducts />
                         </Container>
 
                         <p>
