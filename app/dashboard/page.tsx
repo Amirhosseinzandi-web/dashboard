@@ -9,7 +9,7 @@ import DashboardRegistry from "./DashboardRegistry";
 
 
 
-const DashboardPage = () => {
+const DashboardPage:React.FC = () => {
     return (
         <>
             <Stack direction={"row"} width={"100%"}>

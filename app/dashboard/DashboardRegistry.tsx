@@ -5,7 +5,7 @@ import DoughnutRegistry from "./Charts/DoughnutComponent/DoughnutRegistry";
 import Products from "./Tables/Products/Products";
 import Orders from "./Tables/Orders/Orders";
 
-const DashboardRegistry = () => {
+const DashboardRegistry:React.FC = () => {
 
 
     return (

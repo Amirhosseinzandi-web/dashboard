@@ -65,7 +65,7 @@ const rows = [
 
 
 
-const Orders = () => {
+const Orders:React.FC = () => {
     return (
         <Box border={"1px solid #EDEDED"} borderRadius={2} height={"100%"}>
 
