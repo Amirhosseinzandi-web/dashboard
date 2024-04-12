@@ -19,6 +19,8 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ErrorIcon from '@mui/icons-material/Error';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 
 type PropsType = {
@@ -29,15 +31,17 @@ type PropsType = {
 
 const MobileMenu: React.FC<PropsType> = ({ open, setOpen }) => {
 
-    const [activeItem, setActiveItem] = useState("overview");
+    const pathName = usePathname()
+
+
 
     const menuItems = [
-        { text: 'overview', icon: <LeaderboardIcon /> },
-        { text: 'Customers', icon: <GroupIcon /> },
-        { text: 'Integrations', icon: <TrafficIcon /> },
-        { text: 'Settings', icon: <SettingsIcon /> },
-        { text: 'Account', icon: <AccountCircleIcon /> },
-        { text: 'Errors', icon: <ErrorIcon /> }
+        { text: 'dashboard', icon: <LeaderboardIcon /> },
+        { text: 'customers', icon: <GroupIcon /> },
+        { text: 'integrations', icon: <TrafficIcon /> },
+        { text: 'settings', icon: <SettingsIcon /> },
+        { text: 'account', icon: <AccountCircleIcon /> },
+        { text: 'errors', icon: <ErrorIcon /> }
     ];
 
     useEffect(() => {
@@ -56,14 +60,16 @@ const MobileMenu: React.FC<PropsType> = ({ open, setOpen }) => {
     return (
         <div>
             <Drawer open={open} onClose={() => setOpen(false)}>
-                <Box role="presentation" width={"100%"} height={"100%"} sx={{backgroundColor:"red"}}>
+                <Box role="presentation" width={"100%"} height={"100%"} sx={{ backgroundColor: "red" }}>
                     <Box width={"330px"} bgcolor={"#0B1229"} minHeight={"100vh"} display={"flex"} flexDirection={"column"}>
 
                         <Box p={3}>
                             <Box color={"white"}>
                                 <Stack direction={"row"} alignItems={"center"} gap={1}>
                                     <GppGoodIcon />
-                                    <Typography component={"p"} fontWeight={"bold"} fontSize={18}>Auth Demo</Typography>
+                                    <Typography component={"p"} fontWeight={"bold"} fontSize={18}>
+                                        <Link href={"/dashboard"}>Auth Demo</Link>
+                                    </Typography>
                                 </Stack>
                             </Box>
 
@@ -87,15 +93,16 @@ const MobileMenu: React.FC<PropsType> = ({ open, setOpen }) => {
 
                             <List component="nav" sx={{ width: '100%' }}>
                                 {menuItems.map((item, index) => (
-                                    <ListItem disablePadding key={index} sx={{ bgcolor: activeItem === item.text ? "#635BFF" : "transparent", borderRadius: 3 }}>
+                                    <ListItem disablePadding key={index} sx={{ bgcolor: item.text === pathName.slice(1) ? "#635BFF" : "transparent", borderRadius: 3, overflow: "hidden" }}>
                                         <ListItemButton
-                                            sx={{ color: activeItem === item.text ? "white" : "#b3b9c6" }}
-                                            onClick={() => setActiveItem(item.text)}
+                                            sx={{ color: item.text === pathName.slice(1) ? "white" : "#b3b9c6" }}
                                         >
-                                            <ListItemIcon sx={{ color: activeItem === item.text ? "#fff" : "#b3b9c6", minWidth: 38 }}>
-                                                {item.icon}
-                                            </ListItemIcon>
-                                            <ListItemText primary={item.text} />
+                                            <Link href={`/${item.text.toLowerCase()}`} className="flex items-center">
+                                                <ListItemIcon sx={{ color: item.text === pathName.slice(1) ? "#fff" : "#b3b9c6", minWidth: 38 }}>
+                                                    {item.icon}
+                                                </ListItemIcon>
+                                                <ListItemText primary={item.text.charAt(0).toUpperCase() + item.text.slice(1).toLowerCase()} />
+                                            </Link>
                                         </ListItemButton>
                                     </ListItem>
                                 ))}
