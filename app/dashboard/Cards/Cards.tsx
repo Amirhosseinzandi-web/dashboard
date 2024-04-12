@@ -4,7 +4,7 @@ import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import StickyNote2Icon from '@mui/icons-material/StickyNote2';
-import LinearProgressBar from "../LinearProgressBar";
+import LinearProgressBar from "./LinearProgressBar";
 import Grid from '@mui/material/Unstable_Grid2';
 
 

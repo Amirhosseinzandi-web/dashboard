@@ -1,8 +1,8 @@
 import Header from "@/components/Header/Header";
 import DesktopMenu from "@/components/DesktopMenu/DesktopMenu";
 import { Box, Container, Stack } from "@mui/material";
-import ChartsAndProducts from "../dashboard/ChartsAndProducts";
-import CardData from "../dashboard/CardData/CardData";
+import DashboardRegistry from "../dashboard/DashboardRegistry";
+
 
 
 
@@ -22,8 +22,7 @@ const CustomersPage = () => {
                     <Box py={9}>
 
                         <Container maxWidth={"xl"}>
-                            <CardData />
-                            <ChartsAndProducts />
+                            <DashboardRegistry />
                         </Container>
 
                         <p>
