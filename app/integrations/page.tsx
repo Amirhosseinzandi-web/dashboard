@@ -1,7 +1,7 @@
 import Header from "@/components/Header/Header";
 import DesktopMenu from "@/components/DesktopMenu/DesktopMenu";
 import { Box, Container, Stack } from "@mui/material";
-import CustomersRegistry from "./CustomersRegistry";
+import IntegrationsRegistry from "./IntegrationsRegistry";
 
 
 
@@ -9,7 +9,8 @@ import CustomersRegistry from "./CustomersRegistry";
 
 
 
-const CustomersPage: React.FC = () => {
+
+const IntegrationsPage: React.FC = () => {
     return (
         <>
             <Stack direction={"row"} width={"100%"}>
@@ -21,7 +22,7 @@ const CustomersPage: React.FC = () => {
                     <Header />
                     <Box py={9}>
                         <Container maxWidth={"xl"}>
-                            <CustomersRegistry />
+                            <IntegrationsRegistry />
                         </Container>
                     </Box>
                 </Box>
@@ -32,4 +33,4 @@ const CustomersPage: React.FC = () => {
     );
 }
 
-export default CustomersPage;
+export default IntegrationsPage;

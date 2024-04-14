@@ -1,6 +1,6 @@
 "use client";
 import * as React from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState , memo } from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -130,4 +130,4 @@ const MobileMenu: React.FC<PropsType> = ({ open, setOpen }) => {
 }
 
 
-export default MobileMenu
+export default memo(MobileMenu)

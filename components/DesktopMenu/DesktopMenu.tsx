@@ -11,6 +11,7 @@ import ErrorIcon from '@mui/icons-material/Error';
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { memo } from "react";
 
 
 const DesktopMenu: React.FC = () => {
@@ -99,4 +100,4 @@ const DesktopMenu: React.FC = () => {
     );
 }
 
-export default DesktopMenu;
+export default memo(DesktopMenu);

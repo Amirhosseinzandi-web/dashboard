@@ -192,7 +192,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
 }
 
 
-export default function CustomersOrdersComponent() {
+export default function CustomersTables() {
     const [order, setOrder] = React.useState<Order>('asc');
     const [orderBy, setOrderBy] = React.useState<keyof Data>('name');
     const [selected, setSelected] = React.useState<readonly number[]>([]);
