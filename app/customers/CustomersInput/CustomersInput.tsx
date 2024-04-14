@@ -8,12 +8,12 @@ import SearchIcon from '@mui/icons-material/Search';
 
 
 
-const CustomersInput = () => {
+const CustomersInput: React.FC<{ title: string, palceHolderTitle: string }> = ({ title, palceHolderTitle }) => {
     return (
         <>
             <Box>
                 <Stack direction={"row"} justifyContent={"space-between"}>
-                    <Typography variant="h4">Customers</Typography>
+                    <Typography variant="h4">{title}</Typography>
                     <Button variant="contained" sx={{ bgcolor: "#635BFF", color: "white", borderRadius: 3, display: "flex", gap: 1, ":hover": { bgcolor: "#4e36f5" } }}>
                         <AddIcon />
                         <Typography fontSize={13}>Add</Typography>
@@ -38,7 +38,7 @@ const CustomersInput = () => {
             </Box>
 
             <Box border={"1px solid #EDEDED"} borderRadius={2} height={"100%"} my={3} p={2}>
-                <TextField fullWidth placeholder="Search customer" sx={{ maxWidth: "500px" }}
+                <TextField fullWidth placeholder={palceHolderTitle} sx={{ maxWidth: "500px" }}
                     InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">

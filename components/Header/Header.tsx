@@ -22,7 +22,7 @@ const Header = () => {
                 <Toolbar>
                     <Stack direction={"row"} justifyContent={"space-between"} width={"100%"}>
                         <Box display={"flex"} gap={2} alignItems={"center"}>
-                            <Tooltip title="Menu" sx={{ display: { xs: "block", lg: "none" } }}>
+                            <Tooltip title="Menu" sx={{ display: { xs: "flex", lg: "none" } }}>
                                 <IconButton onClick={() => setOpen(true)}>
                                     <MenuIcon sx={{ color: "rgba(0, 0, 0, 0.54)" }} />
                                 </IconButton>

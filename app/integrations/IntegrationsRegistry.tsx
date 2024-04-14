@@ -7,7 +7,7 @@ import CompanyDetailsPanel from "./CompanyDetailsPanel/CompanyDetailsPanel";
 const IntegrationsRegistry: React.FC = () => {
     return (
         <Box>
-            <CustomersInput />
+            <CustomersInput title={"Integrations"} palceHolderTitle={"Search integrations"} />
             <CompanyDetailsPanel />
         </Box>
     );

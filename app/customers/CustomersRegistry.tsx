@@ -9,7 +9,7 @@ const CustomersRegistry: React.FC = () => {
 
     return (
         <Box>
-            <CustomersInput />
+            <CustomersInput title={"Customers"} palceHolderTitle={"Search customers"} />
             <Box>
                 <CustomersTables />
             </Box>
