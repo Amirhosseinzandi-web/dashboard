@@ -6,6 +6,23 @@
     background-color: unset;
 }
 
+/* ***************styles for customers page******************* */
 .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
     border-color: #635BFF !important;
 }
+
+
+.MuiTableRow-root.Mui-selected.MuiTableRow-hover {
+    background-color: #F3F2FF !important;
+}
+
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked,
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.MuiCheckbox-indeterminate {
+    color: #635bff !important;
+}
+
+.MuiButtonBase-root.MuiTableSortLabel-root.css-1qgma8u-MuiButtonBase-root-MuiTableSortLabel-root {
+    color: #667085 !important;
+}
+
+/* *********************************************************** */

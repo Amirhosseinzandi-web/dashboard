@@ -38,7 +38,7 @@ const CustomersRegistry: React.FC = () => {
                 </Stack>
             </Box>
 
-            <Box border={"1px solid #EDEDED"} borderRadius={2} height={"100%"} mt={4} p={2}>
+            <Box border={"1px solid #EDEDED"} borderRadius={2} height={"100%"} my={3} p={2}>
                 <TextField fullWidth placeholder="Search customer" sx={{ maxWidth: "500px" }}
                     InputProps={{
                         startAdornment: (
