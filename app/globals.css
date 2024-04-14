@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.css-4t3x6l-MuiPaper-root-MuiDrawer-paper{
+.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
     background-color: unset;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #635BFF !important;
 }
