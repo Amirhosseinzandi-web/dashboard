@@ -45,7 +45,7 @@ const SettingsRegistry: React.FC = () => {
                     </Box>
 
                     <Box borderTop={"1px solid #EDEDED"} p={1} display={"flex"} justifyContent={"flex-end"}>
-                        <Button variant="contained" sx={{ bgcolor: "#635BFF", color: "white", borderRadius: 3 }}>Save changes</Button>
+                        <Button variant="contained" sx={{ bgcolor: "#635BFF", color: "white", borderRadius: 3, ":hover": { bgcolor: "#4e36f5" } }}>Save changes</Button>
                     </Box>
 
                 </Box>
@@ -58,12 +58,12 @@ const SettingsRegistry: React.FC = () => {
                     </Box>
 
                     <Stack p={3} direction={"column"} gap={2} borderBottom={"1px solid #EDEDED"}>
-                        <TextField variant="outlined" label="Password" sx={{ color: "#667085" , maxWidth:"600px" }} />
-                        <TextField variant="outlined" label="Confirm password" sx={{ color: "#667085" , maxWidth:"600px" }} />
+                        <TextField variant="outlined" label="Password" sx={{ color: "#667085", maxWidth: "600px" }} />
+                        <TextField variant="outlined" label="Confirm password" sx={{ color: "#667085", maxWidth: "600px" }} />
                     </Stack>
 
                     <Box p={1} display={"flex"} justifyContent={"flex-end"}>
-                        <Button variant="contained" sx={{ bgcolor: "#635BFF", color: "white", borderRadius: 3 }}>Update</Button>
+                        <Button variant="contained" sx={{ bgcolor: "#635BFF", color: "white", borderRadius: 3, ":hover": { bgcolor: "#4e36f5" } }}>Update</Button>
                     </Box>
 
                 </Box>
