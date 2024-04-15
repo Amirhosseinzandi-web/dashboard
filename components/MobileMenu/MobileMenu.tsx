@@ -1,6 +1,6 @@
 "use client";
 import * as React from 'react';
-import { useEffect, useState , memo } from 'react';
+import { useEffect, useState, memo } from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -95,9 +95,9 @@ const MobileMenu: React.FC<PropsType> = ({ open, setOpen }) => {
                                 {menuItems.map((item, index) => (
                                     <ListItem disablePadding key={index} sx={{ bgcolor: item.text === pathName.slice(1) ? "#635BFF" : "transparent", borderRadius: 3, overflow: "hidden" }}>
                                         <ListItemButton
-                                            sx={{ color: item.text === pathName.slice(1) ? "white" : "#b3b9c6" }}
+                                            sx={{ color: item.text === pathName.slice(1) ? "white" : "#b3b9c6", p: 0 }}
                                         >
-                                            <Link href={`/${item.text.toLowerCase()}`} className="flex items-center">
+                                            <Link href={`/${item.text.toLowerCase()}`} className="flex items-center w-full px-4 py-2">
                                                 <ListItemIcon sx={{ color: item.text === pathName.slice(1) ? "#fff" : "#b3b9c6", minWidth: 38 }}>
                                                     {item.icon}
                                                 </ListItemIcon>
