@@ -22,7 +22,7 @@ const Header = () => {
 
     const [open, setOpen] = useState(false);
     const dispatch = useDispatch()
-    const { flag } = useSelector((state:initialStateType) => state.app)
+    const { flag } = useSelector((state: initialStateType) => state.app)
 
     return (
         <>
@@ -32,28 +32,30 @@ const Header = () => {
                         <Box display={"flex"} gap={2} alignItems={"center"}>
                             <Tooltip title="Menu" sx={{ display: { xs: "flex", lg: "none" } }}>
                                 <IconButton onClick={() => setOpen(true)}>
-                                    <MenuIcon sx={{ color: "rgba(0, 0, 0, 0.54)" }} />
+                                    <MenuIcon sx={{ color: (theme) => theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.54)" : "white" }} />
                                 </IconButton>
                             </Tooltip>
 
                             <Tooltip title="search">
                                 <IconButton>
-                                    <SearchIcon sx={{ color: "rgba(0, 0, 0, 0.54)" }} />
+                                    <SearchIcon sx={{ color: (theme) => theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.54)" : "white" }} />
                                 </IconButton>
                             </Tooltip>
 
                         </Box>
 
                         <Box display={"flex"} gap={2} alignItems={"center"}>
-                            <Switch checked={flag} onChange={() => dispatch(DarkmodeHandler())} />
+                            <Tooltip title="Darkmode">
+                                <Switch checked={flag} onChange={() => dispatch(DarkmodeHandler())} />
+                            </Tooltip>
                             <Tooltip title="search">
                                 <IconButton>
-                                    <PeopleIcon sx={{ color: "rgba(0, 0, 0, 0.54)" }} />
+                                    <PeopleIcon sx={{ color: (theme) => theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.54)" : "white" }} />
                                 </IconButton>
                             </Tooltip>
                             <Tooltip title="friends">
                                 <IconButton>
-                                    <NotificationsIcon sx={{ color: "rgba(0, 0, 0, 0.54)" }} />
+                                    <NotificationsIcon sx={{ color: (theme) => theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.54)" : "white" }} />
                                 </IconButton>
                             </Tooltip>
                             <UserButton afterSignOutUrl="/sign-in" />
