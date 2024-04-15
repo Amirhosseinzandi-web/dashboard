@@ -154,7 +154,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
 
     return (
         <TableHead>
-            <TableRow sx={{ bgcolor: "#F9FAFB" }}>
+            <TableRow sx={{ bgcolor: (theme) => theme.palette.mode === 'light' ? '#F9FAFB' : theme.palette.background.paper }}>
                 <TableCell padding="checkbox">
                     <Checkbox
                         color="primary"

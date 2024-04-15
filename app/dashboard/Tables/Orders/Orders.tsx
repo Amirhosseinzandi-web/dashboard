@@ -16,7 +16,7 @@ import EastIcon from '@mui/icons-material/East';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
-        backgroundColor: "#F9FAFB",
+        backgroundColor: theme.palette.mode === 'light' ? '#F9FAFB' : theme.palette.background.paper,
         color: "#667085",
     },
     [`&.${tableCellClasses.body}`]: {
@@ -27,7 +27,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
-    
+
     // hide last border
     'td': {
         padding: "0px 16px"
@@ -36,7 +36,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
         border: 0,
     },
     ':hover': {
-        backgroundColor: "rgba(0, 0, 0, 0.04)" ,
+        backgroundColor: "rgba(0, 0, 0, 0.04)",
         cursor: "pointer"
     }
 }));
@@ -65,7 +65,7 @@ const rows = [
 
 
 
-const Orders:React.FC = () => {
+const Orders: React.FC = () => {
     return (
         <Box border={"1px solid #EDEDED"} borderRadius={2} height={"100%"}>
 

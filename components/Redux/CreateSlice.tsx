@@ -7,18 +7,21 @@ type initialStateType = {
     flag: boolean
 }
 
-const initialState:initialStateType = {
+const initialState: initialStateType = {
     flag: false
 }
 
 
 const SliceHandler = createSlice({
     name: "SliceHandler",
-    initialState ,
-    reducers:{
-        // 
+    initialState,
+    reducers: {
+        DarkmodeHandler: (state) => {
+            state.flag = !state.flag
+        }
     }
 })
 
 
+export const { DarkmodeHandler } = SliceHandler.actions
 export default SliceHandler.reducer
