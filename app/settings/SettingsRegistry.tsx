@@ -23,7 +23,7 @@ const SettingsRegistry: React.FC = () => {
                         <Box mt={1}>
                             <Typography fontSize={18}>Email</Typography>
                             <Stack direction={"row"} alignItems={"center"}>
-                                <Checkbox checked />
+                                <Checkbox defaultChecked />
                                 <Typography>Products updates</Typography>
                             </Stack>
                             <Stack direction={"row"} alignItems={"center"}>
@@ -34,7 +34,7 @@ const SettingsRegistry: React.FC = () => {
                         <Box sx={{ mt: { xs: 5, sm: 1 } }}>
                             <Typography fontSize={18}>Phone</Typography>
                             <Stack direction={"row"} alignItems={"center"}>
-                                <Checkbox checked />
+                                <Checkbox defaultChecked />
                                 <Typography>Email</Typography>
                             </Stack>
                             <Stack direction={"row"} alignItems={"center"}>
