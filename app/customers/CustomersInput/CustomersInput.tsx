@@ -1,3 +1,4 @@
+"use client"
 import { Box, Button, InputAdornment, Stack, TextField, Typography } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import UploadIcon from '@mui/icons-material/Upload';
@@ -42,7 +43,7 @@ const CustomersInput: React.FC<{ title: string, palceHolderTitle: string }> = ({
                     InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">
-                                <SearchIcon sx={{ color: "rgba(0, 0, 0, 0.54)", fontSize: "23px" }} />
+                                <SearchIcon sx={{ color: (theme) => theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.54)" : "white", fontSize: "23px" }} />
                             </InputAdornment>
                         ),
                     }}
