@@ -5,7 +5,7 @@ import Link from "next/link";
 
 
 
-const NotFound = () => {
+const NotFound: React.FC = () => {
     return (
         <Container>
             <Box minHeight={"100vh"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
