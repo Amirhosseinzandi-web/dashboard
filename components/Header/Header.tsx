@@ -9,6 +9,7 @@ import MobileMenu from "../MobileMenu/MobileMenu";
 import { useState, memo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { DarkmodeHandler } from "../Redux/CreateSlice";
+import TungstenIcon from '@mui/icons-material/Tungsten';
 
 
 type initialStateType = {
@@ -45,8 +46,12 @@ const Header = () => {
                         </Box>
 
                         <Box display={"flex"} gap={2} alignItems={"center"}>
+
                             <Tooltip title="Darkmode">
-                                <Switch checked={flag} onChange={() => dispatch(DarkmodeHandler())} />
+                                <Box display={"flex"} alignItems={"center"} gap={1}> 
+                                    <TungstenIcon sx={{ color: (theme) => theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.54)" : "white" }} />
+                                    <Switch checked={flag} onChange={() => dispatch(DarkmodeHandler())} />
+                                </Box>
                             </Tooltip>
                             <Tooltip title="search">
                                 <IconButton>

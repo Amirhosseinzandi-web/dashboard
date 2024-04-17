@@ -263,9 +263,9 @@ export default function CustomersTables() {
 
     return (
         <Box sx={{ width: '100%' }}>
-            <Paper sx={{ width: '100%', mb: 2, borderRadius: 5 }}>
+            <Paper sx={{ width: '100%', mb: 2, borderRadius: 5, border: "1px solid #EDEDED", overflow: 'hidden' }}>
                 {/* <EnhancedTableToolbar numSelected={selected.length} /> */}
-                <TableContainer sx={{ borderRadius: 5 }}>
+                <TableContainer sx={{ borderRadius: 5}}>
                     <Table
                         sx={{ minWidth: 750 }}
                         aria-labelledby="tableTitle"
