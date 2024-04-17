@@ -1,5 +1,5 @@
 import Header from "@/components/Header/Header";
-import DesktopMenu from "@/components/DesktopMenu/DesktopMenu";
+import DesktopMenu from "@/components/Menu/DesktopMenu/DesktopMenu";
 import { Box, Container, Stack } from "@mui/material";
 import CustomersRegistry from "./CustomersRegistry";
 

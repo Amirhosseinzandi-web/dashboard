@@ -5,7 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import PeopleIcon from '@mui/icons-material/People';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { UserButton } from "@clerk/nextjs";
-import MobileMenu from "../MobileMenu/MobileMenu";
+import MobileMenu from "../Menu/MobileMenu/MobileMenu";
 import { useState, memo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { DarkmodeHandler } from "../Redux/CreateSlice";
