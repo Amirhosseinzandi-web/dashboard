@@ -67,13 +67,13 @@ const rows = [
 
 const Orders: React.FC = () => {
     return (
-        <Box border={"1px solid #EDEDED"} borderRadius={2} height={"100%"}>
+        <Box border={"1px solid #EDEDED"} borderRadius={2} height={"100%"} display={"flex"} flexDirection={"column"}>
 
             <Box p={3}>
                 <Typography variant="h6">Latest orders</Typography>
             </Box>
 
-            <Box borderTop={"1px solid #EDEDED"}>
+            <Box borderTop={"1px solid #EDEDED"} >
                 <TableContainer component={Paper}>
                     <Table sx={{ minWidth: 700 }} aria-label="customized table">
                         <TableHead>
@@ -104,9 +104,11 @@ const Orders: React.FC = () => {
                 </TableContainer>
             </Box>
 
-            <Box display={"flex"} alignItems={"center"} justifyContent={"flex-end"} gap={1} borderTop={"1px solid #EDEDED"} p={2}>
-                <Typography fontSize={"14px"}>View all</Typography>
-                <EastIcon sx={{ fontSize: "14px" }} />
+            <Box display={"flex"} justifyContent={"flex-end"} alignItems={"flex-end"} borderTop={"1px solid #EDEDED"} p={2} height={"100%"}>
+                <Box display={"flex"} gap={1} alignItems={"center"}>
+                    <Typography fontSize={"14px"}>View all</Typography>
+                    <EastIcon sx={{ fontSize: "14px" }} />
+                </Box>
             </Box>
 
         </Box>

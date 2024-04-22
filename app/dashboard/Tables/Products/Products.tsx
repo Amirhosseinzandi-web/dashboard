@@ -38,7 +38,7 @@ const Products = () => {
 
 
     return (
-        <Box border={"1px solid #EDEDED"} borderRadius={2} height={"100%"}>
+        <Box border={"1px solid #EDEDED"} borderRadius={2} height={"100%"} display={"flex"} flexDirection={"column"}>
 
             <Box p={3}>
                 <Typography variant="h6">Latest products</Typography>
@@ -49,7 +49,7 @@ const Products = () => {
                     {
                         productsData.map((item, index) => (
                             <Box key={index} display={"flex"} justifyContent={"space-between"} alignItems={"center"}>
-                                <ListItem sx={{margin: "4px 0"}}>
+                                <ListItem sx={{ margin: "4px 0" }}>
                                     <ListItemAvatar>
                                         <Avatar variant="square" src={item.src} sx={{ borderRadius: 2 }} />
                                     </ListItemAvatar>
@@ -62,9 +62,11 @@ const Products = () => {
                 </List>
             </Box>
 
-            <Box display={"flex"} alignItems={"center"} justifyContent={"flex-end"} gap={1} borderTop={"1px solid #EDEDED"} p={2}>
-                <Typography fontSize={"14px"}>View all</Typography>
-                <EastIcon sx={{ fontSize: "14px" }} />
+            <Box display={"flex"} justifyContent={"flex-end"} alignItems={"flex-end"} borderTop={"1px solid #EDEDED"} p={2} height={"100%"} >
+                <Box display={"flex"} gap={1} alignItems={"center"}>
+                    <Typography fontSize={"14px"}>View all</Typography>
+                    <EastIcon sx={{ fontSize: "14px" }} />
+                </Box>
             </Box>
 
         </Box>
